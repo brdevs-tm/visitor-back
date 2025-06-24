@@ -9,8 +9,8 @@ const sendBotMessage = async (data) => {
   const message = `
 📥 Yangi tashrif:
 🌐 IP: ${data.ip}
-📍 Joylashuv: ${data.location.city}, ${data.location.region}, ${
-    data.location.country
+📍 Joylashuv: ${data.location.city}, ${data.location.region_name}, ${
+    data.location.country_name
   }
 📱 Qurilma: ${data.device}
 🛰️ Koordinatalar: Lat: <code>${data.coords.lat}</code>, Long: <code>${
@@ -18,8 +18,7 @@ const sendBotMessage = async (data) => {
   }</code>
 🕒 Vaqt: ${new Date(data.visitTime).toLocaleString()}
 🔍 User-Agent: <code>${data.userAgent}</code>
-  `;
-
+    `;
   try {
     await bot.sendMessage(process.env.TELEGRAM_CHAT_ID, message, {
       parse_mode: "HTML",

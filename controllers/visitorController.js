@@ -16,7 +16,7 @@ exports.trackVisitor = async (req, res) => {
       ip,
       userAgent,
       device,
-      location: { city, region: region_name, country: country_name },
+      location: { city, region_name, country_name },
       coords: { lat: latitude, lng: longitude },
       visitTime: new Date(),
     };
